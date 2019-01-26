@@ -1,0 +1,79 @@
+{
+"format_version": 1,
+"imports": [{
+  "target_table": "PurchaseOrder.Header",
+  "source_data": {
+    "data_type": "CSV",
+    "file_name": "header.csv",
+    "has_header": false,
+    "dialect": "HANA",
+    "type_config": {
+      "delimiter": ","
+    }
+  },
+  "import_settings": {
+    "import_columns": ["PurchaseOrderId",
+    "NoteId",
+    "Partner",
+    "Currency",
+    "GrossAmount",
+    "NetAmount",
+    "TaxAmount",
+    "LifeCycleStatus",
+    "AprovalStatus",
+    "ConfirmStatus",
+    "OrderingStatus",
+    "InvoiceStatus"]
+  },
+  "column_mappings": {
+    "PurchaseOrderId": 1,
+    "NoteId": 6,
+    "Partner": 7,
+    "Currency": 8,
+    "GrossAmount": 9,
+    "NetAmount": 10,
+    "TaxAmount": 11,
+    "LifeCycleStatus": 12,
+    "AprovalStatus": 13,
+    "ConfirmStatus": 14,
+    "OrderingStatus": 15,
+    "InvoiceStatus": 16
+  }
+},
+{
+  "target_table": "PurchaseOrder.Item",
+  "source_data": {
+    "data_type": "CSV",
+    "file_name": "item.csv",
+    "has_header": false,
+    "dialect": "HANA",
+    "type_config": {
+      "delimiter": ","
+    }
+  },
+  "import_settings": {
+    "import_columns": ["POHeader.PurchaseOrderId",
+    "Product",
+    "NoteId",
+    "Currency",
+    "GrossAmount",
+    "NetAmount",
+    "TaxAmount",
+    "Quantity",
+    "QuantityUnit" ]
+  },
+  "column_mappings": {
+    "POHeader.PurchaseOrderId": 1,
+    "Product": 3,
+    "NoteId": 4,
+    "Currency": 5,
+    "GrossAmount": 6,
+    "NetAmount": 7,
+    "TaxAmount": 8,
+    "Quantity": 9,
+    "QuantityUnit": 10
+
+  }
+}]
+}
+

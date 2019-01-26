@@ -1,0 +1,12 @@
+{
+  "xsappname": "hana_demo",
+  "scopes": [{
+    "name": "$XSAPPNAME.USER",
+    "description": "Demo User Application Scope"
+  }],
+  "role-templates": [{
+    "name": "demoUser",
+    "description" : "Demo User Role Template",
+    "scope-references": ["$XSAPPNAME.USER"]
+  }]
+}
